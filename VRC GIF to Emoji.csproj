@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F71A95A6-0E70-45F9-AFF1-CBEE49AB854C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>VRC_Gif_Maker</RootNamespace>
-    <AssemblyName>VRC Gif Maker</AssemblyName>
+    <RootNamespace>VRC_GIF_to_Emoji</RootNamespace>
+    <AssemblyName>VRC GIF to Emoji</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

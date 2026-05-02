@@ -52,18 +52,18 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Restore NuGet packages
-        run: nuget restore "VRC Gif Maker.csproj" 2>$null; exit 0
+        run: nuget restore "VRC GIF to Emoji.csproj" 2>$null; exit 0
         shell: pwsh
 
       - name: Build Release
-        run: msbuild "VRC Gif Maker.csproj" /t:Build /p:Configuration=Release /nologo /v:minimal
+        run: msbuild "VRC GIF to Emoji.csproj" /t:Build /p:Configuration=Release /nologo /v:minimal
 
       - name: Package portable zip
         shell: pwsh
         run: |
           $version = "${{ steps.version.outputs.VERSION }}"
           $outDir = "bin\Release"
-          $zipName = "VRC-Gif-Maker-$version-portable.zip"
+          $zipName = "VRC-GIF-to-Emoji-$version-portable.zip"
 
           # Include the exe and all required dlls/configs, exclude dev files
           $files = Get-ChildItem $outDir -Include *.exe,*.dll,*.config,*.exe.config -File
@@ -85,11 +85,11 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.VERSION }}
-          name: VRC Gif Maker ${{ steps.version.outputs.VERSION }}
+          name: VRC GIF to Emoji ${{ steps.version.outputs.VERSION }}
           body: |
-            **VRC Gif Maker ${{ steps.version.outputs.VERSION }}**
+            **VRC GIF to Emoji ${{ steps.version.outputs.VERSION }}**
 
-            Portable release — extract the zip and run `VRC Gif Maker.exe`.
+            Portable release — extract the zip and run `VRC GIF to Emoji.exe`.
             Requires .NET Framework 4.7.2 (included in Windows 10 1803+).
 
             ### What's included

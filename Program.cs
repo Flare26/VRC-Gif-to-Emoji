@@ -2,7 +2,7 @@ using System;
 using System.Net;
 using System.Windows.Forms;
 
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     internal static class Program
     {

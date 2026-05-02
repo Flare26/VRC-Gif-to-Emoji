@@ -6,7 +6,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     public static class GifLoader
     {
@@ -18,7 +18,7 @@ namespace VRC_Gif_Maker
         private static HttpClient CreateHttpClient()
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("VRC-Gif-Maker/1.0");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("VRC-GIF-to-Emoji/1.0");
             return client;
         }
 

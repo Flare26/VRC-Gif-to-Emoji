@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     public partial class Form1 : Form
     {

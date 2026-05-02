@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VRC_Gif_Maker.Properties
+namespace VRC_GIF_to_Emoji.Properties
 {
 
 

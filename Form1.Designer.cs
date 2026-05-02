@@ -1,4 +1,4 @@
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     partial class Form1
     {
@@ -93,7 +93,7 @@ namespace VRC_Gif_Maker
             this.btnBrowse = new System.Windows.Forms.Button();
             this.lblDropHint = new System.Windows.Forms.Label();
             this.centerSplit = new System.Windows.Forms.SplitContainer();
-            this.preview = new VRC_Gif_Maker.PreviewControl();
+            this.preview = new VRC_GIF_to_Emoji.PreviewControl();
             this.toolsTabs = new System.Windows.Forms.TabControl();
             this.tabFrames = new System.Windows.Forms.TabPage();
             this.framesRoot = new System.Windows.Forms.TableLayoutPanel();
@@ -942,7 +942,7 @@ namespace VRC_Gif_Maker
             this.Controls.Add(this.rootLayout);
             this.MinimumSize = new System.Drawing.Size(900, 580);
             this.Name = "Form1";
-            this.Text = "VRC Gif Maker";
+            this.Text = "VRC GIF to Emoji";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
             this.rootLayout.ResumeLayout(false);

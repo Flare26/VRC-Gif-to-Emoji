@@ -1,4 +1,4 @@
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     partial class PreviewControl
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     public sealed class GifFrame : IDisposable
     {

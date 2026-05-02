@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
-namespace VRC_Gif_Maker
+namespace VRC_GIF_to_Emoji
 {
     public sealed class GifProject
     {
