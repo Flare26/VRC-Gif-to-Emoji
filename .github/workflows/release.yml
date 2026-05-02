@@ -65,10 +65,13 @@ jobs:
           $outDir = "bin\Release"
           $zipName = "VRC-GIF-to-Emoji-$version-portable.zip"
 
-          # Include the exe and all required dlls/configs, exclude dev files
-          $files = Get-ChildItem $outDir -Include *.exe,*.dll,*.config,*.exe.config -File
+          # Include the exe and any required dlls/configs, exclude dev files (.pdb, .xml).
+          # Get-ChildItem -Include needs a wildcard in the Path or -Recurse, hence "$outDir\*".
+          $files = Get-ChildItem "$outDir\*" -Include *.exe,*.dll,*.config -File
+          if (-not $files) { throw "No files matched in $outDir" }
           Compress-Archive -Path $files.FullName -DestinationPath $zipName -Force
-          Write-Host "Created $zipName with $($files.Count) files"
+          Write-Host "Created $zipName with $($files.Count) files:"
+          $files | ForEach-Object { Write-Host "  $($_.Name)" }
           "ZIP_NAME=$zipName" | Out-File -Append $env:GITHUB_OUTPUT -Encoding utf8
         id: package
 
