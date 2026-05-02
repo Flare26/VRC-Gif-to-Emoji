@@ -8,6 +8,9 @@ namespace VRC_GIF_to_Emoji
 {
     public partial class Form1 : Form
     {
+        // VRChat caps animated emoji at 64 frames and 64 fps.
+        private const int MaxFrames = 64;
+
         private readonly GifProject _project = new GifProject();
 
         public Form1()
@@ -174,6 +177,16 @@ namespace VRC_GIF_to_Emoji
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (_project.Frames.Count > MaxFrames)
+            {
+                MessageBox.Show(this,
+                    $"VRChat allows at most {MaxFrames} frames per emoji. " +
+                    $"You currently have {_project.Frames.Count}.\n\n" +
+                    "Use the Frames tab to Trim or Keep-every-Nth before saving.",
+                    "Too many frames",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             using (var dlg = new SaveFileDialog
             {
                 Filter = "PNG|*.png",
@@ -216,8 +229,14 @@ namespace VRC_GIF_to_Emoji
         private void RefreshFileNameLabel()
         {
             var (cols, rows, cell) = _project.ResolveGrid();
+            string warning = _project.Frames.Count > MaxFrames
+                ? $"   ⚠ {_project.Frames.Count} frames — VRChat max is {MaxFrames}"
+                : "";
             lblFileName.Text =
-                $"Output: {_project.ResolveFileName()}   ({cols}×{rows} grid, {cell}×{cell} cells)";
+                $"Output: {_project.ResolveFileName()}   ({cols}×{rows} grid, {cell}×{cell} cells){warning}";
+            lblFileName.ForeColor = _project.Frames.Count > MaxFrames
+                ? System.Drawing.Color.Firebrick
+                : System.Drawing.SystemColors.ControlText;
         }
 
         private void SetStatus(string s) => statusLabel.Text = s;

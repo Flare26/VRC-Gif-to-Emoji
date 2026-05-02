@@ -685,7 +685,7 @@ namespace VRC_GIF_to_Emoji
             this.numFps.Location = new System.Drawing.Point(85, 3);
             this.numFps.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.numFps.Maximum = new decimal(new int[] {
-            60,
+            64,
             0,
             0,
             0});
@@ -709,7 +709,7 @@ namespace VRC_GIF_to_Emoji
             this.trkFps.Dock = System.Windows.Forms.DockStyle.Top;
             this.trkFps.Location = new System.Drawing.Point(0, 31);
             this.trkFps.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.trkFps.Maximum = 60;
+            this.trkFps.Maximum = 64;
             this.trkFps.Minimum = 1;
             this.trkFps.Name = "trkFps";
             this.trkFps.Size = new System.Drawing.Size(396, 45);
